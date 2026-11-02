@@ -1,0 +1,74 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="theme-color" content="#101827">
+  <title>Verity — News Credibility Checker</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Space+Grotesk:wght@500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="/style.css">
+</head>
+<body>
+  <div class="ambient ambient-one"></div><div class="ambient ambient-two"></div>
+  <header class="topbar">
+    <a class="brand" href="#"><span class="brand-mark">V</span><span>VERITY<span class="brand-dot">.</span></span></a>
+    <span class="top-note"><span class="live-dot"></span> INDEPENDENT CLAIM ANALYSIS</span>
+  </header>
+  <main>
+    <section class="hero">
+      <div class="eyebrow">BE INFORMED. NOT INFLUENCED.</div>
+      <h1>Truth deserves<br><span>more than a guess.</span></h1>
+      <p class="hero-copy">Check a headline, post, or news claim against available evidence. Verity evaluates claims in both directions — it can support, challenge, or leave a claim unresolved.</p>
+    </section>
+
+    <section class="checker panel">
+      <div class="panel-heading">
+        <div><div class="section-kicker">01 / SUBMIT A CLAIM</div><h2>What have you heard?</h2></div>
+        <span class="privacy-tag"><span>●</span> PRIVATE BY DEFAULT</span>
+      </div>
+      <label for="claim">NEWS CLAIM OR ARTICLE TEXT</label>
+      <textarea id="claim" maxlength="6000" placeholder="Paste a headline, a paragraph, a social media post, or a specific claim you want to verify..."></textarea>
+      <div class="input-meta"><span>Be specific. Include dates, names, and locations where possible.</span><span id="counter">0 / 6000</span></div>
+      <div class="actions">
+        <button id="checkBtn" class="primary-btn"><span>Analyse claim</span><span class="arrow">↗</span></button>
+        <button id="clearBtn" class="text-btn">Clear</button>
+      </div>
+      <div id="error" class="error" role="alert" hidden></div>
+    </section>
+
+    <section id="loading" class="loading panel" hidden>
+      <div class="loader"></div><div><strong>Checking the evidence</strong><p>Looking for corroboration, contradictions, and missing context.</p></div>
+    </section>
+
+    <section id="results" hidden aria-live="polite">
+      <div class="results-head"><div><div class="section-kicker">02 / ASSESSMENT</div><h2>What the evidence says</h2></div><button id="copyBtn" class="copy-btn">Copy report ↗</button></div>
+      <div class="verdict-card panel">
+        <div class="verdict-top"><span class="section-kicker">OVERALL FINDING</span><span id="confidence" class="confidence"></span></div>
+        <div class="verdict-line"><span id="verdictIcon" class="verdict-icon">?</span><div><h3 id="verdict">Unverified</h3><p id="summary"></p></div></div>
+        <div class="meter"><div id="meterFill"></div></div>
+        <div class="meter-labels"><span>LOW CONFIDENCE</span><span>HIGH CONFIDENCE</span></div>
+        <p class="confidence-note" id="confidenceNote"></p>
+      </div>
+      <div class="analysis-grid">
+        <article class="panel detail-panel"><div class="section-kicker">CLAIM BREAKDOWN</div><h3>What was assessed</h3><ul id="claimsList"></ul></article>
+        <article class="panel detail-panel"><div class="section-kicker">BALANCED REVIEW</div><h3>Evidence on both sides</h3><div id="forBox" class="evidence-block"><b>Supporting evidence</b><ul id="forList"></ul></div><div id="againstBox" class="evidence-block"><b>Contrary evidence</b><ul id="againstList"></ul></div></article>
+      </div>
+      <article class="panel detail-panel"><div class="section-kicker">CONTEXT & LIMITATIONS</div><h3>What you should know</h3><p id="context"></p><p id="limitations" class="muted"></p></article>
+      <article class="panel detail-panel"><div class="section-kicker">SOURCE TRAIL</div><h3>References checked</h3><ol id="sourcesList" class="sources"></ol><p id="noSources" class="muted" hidden>No verifiable source links were returned. Treat this result as preliminary.</p></article>
+      <div class="disclaimer">Verity is an AI-assisted research aid, not an authority or a substitute for independent verification. A lack of evidence is not proof that a claim is false. Always open the sources and check their dates, methods, and original context.</div>
+    </section>
+    <section class="method panel">
+      <div class="section-kicker">OUR STANDARD</div><h2>No verdict is the default.</h2>
+      <div class="method-grid">
+        <div><span class="method-number">01</span><b>True</b><p>Reliable evidence substantially supports the central claim.</p></div>
+        <div><span class="method-number">02</span><b>False</b><p>Reliable evidence directly contradicts the central claim.</p></div>
+        <div><span class="method-number">03</span><b>Misleading</b><p>There is a factual core, but key context is omitted or distorted.</p></div>
+        <div><span class="method-number">04</span><b>Unverified</b><p>Evidence is insufficient, conflicting, or too weak for a fair verdict.</p></div>
+      </div>
+    </section>
+  </main>
+  <footer><span>VERITY<span class="brand-dot">.</span> — THINK CRITICALLY.</span><span>Built for balanced information literacy</span></footer>
+  <script src="/app.js"></script>
+</body>
+</html>

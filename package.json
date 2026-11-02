@@ -1,0 +1,9 @@
+{
+  "name": "verity-balanced-news-checker",
+  "version": "1.0.0",
+  "private": true,
+  "type": "module",
+  "scripts": {
+    "dev": "netlify dev"
+  }
+}
